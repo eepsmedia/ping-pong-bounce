@@ -3,7 +3,7 @@ import numpy
 import math
 
 inFileName = "data/pingpong.wav"
-outFileName = 'data/pingpong1000 using SD.csv'
+outFileName = 'data/pingpong1000.csv'
 outDataRate = 1000      # points per second
 
 with wave.open(inFileName, 'rb') as f:
@@ -31,7 +31,7 @@ with open(outFileName, 'w') as out:
         iEnd = math.ceil(tEnd / 1000.00 * WAVparams.framerate)
         if iEnd > WAVparams.nframes:
             iEnd = WAVparams.nframes
-        theMean = numpy.std(WAVdata[iStart:iEnd])  # could use std() instead of mean()
+        theMean = numpy.mean(WAVdata[iStart:iEnd])  # could use std() instead of mean()
 
         theLine = '{:g}, {:g}\n'.format(tStart, theMean)
         out.write(theLine)
