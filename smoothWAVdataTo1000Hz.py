@@ -13,7 +13,7 @@ with wave.open(inFileName, 'rb') as f:
 
     bytesData = f.readframes(WAVparams.nframes)
 
-WAVdata = numpy.frombuffer(bytesData, dtype = numpy.dtype('i2')) # answer is an ndarray
+WAVdata = numpy.frombuffer(bytesData, dtype=numpy.dtype('i2'))  # answer is an ndarray
 
 i = 0
 tPerFrame = 1000.0 / outDataRate    # milliseconds per frame
@@ -26,10 +26,10 @@ with open(outFileName, 'w') as out:
     tStart = 0
     dataEndTime = WAVparams.nframes * 1000 / WAVparams.framerate    # milliseconds
 
-    while (tStart < dataEndTime):
+    while tStart < dataEndTime:
         tEnd = tStart + tPerFrame
         iEnd = math.ceil(tEnd / 1000.00 * WAVparams.framerate)
-        if (iEnd > WAVparams.nframes):
+        if iEnd > WAVparams.nframes:
             iEnd = WAVparams.nframes
         theMean = numpy.std(WAVdata[iStart:iEnd])  # could use std() instead of mean()
 
