@@ -1,12 +1,13 @@
-import aifc
 import wave
 import numpy
 
-inFile = "pingpong.wav"
-f = wave.open(inFile, 'rb')
+inFileName = "data/pingpong.wav"
+outFileName = 'data/pingpong raw redux.csv'
+
+f = wave.open(inFileName, 'rb')
 params = f.getparams()
-s01 = "There are " + repr(params.nframes) + " frames."
-print(s01)
+
+print("There are {} frames.".format(params.nframes))
 
 bytesData = f.readframes(params.nframes)
 f.close()
@@ -14,8 +15,6 @@ f.close()
 a = numpy.frombuffer(bytesData, dtype = numpy.dtype('i2')) # answer is an ndarray
 
 i = 0
-
-outFileName = 'pingpong raw.csv'
 
 with open(outFileName, 'w') as out:
 
@@ -28,5 +27,4 @@ with open(outFileName, 'w') as out:
         out.write(theLine)
         i += 1
 
-
-
+print("Wrote {} frames.".format(i))
