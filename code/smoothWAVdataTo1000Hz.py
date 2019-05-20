@@ -2,8 +2,8 @@ import wave
 import numpy
 import math
 
-inFileName = "data/pingpong.wav"
-outFileName = 'data/pingpong1000both.csv'   # change to whatever you want
+inFileName = "../data/pingpong.wav"
+outFileName = '../data/pingpong1000both.csv'   # change to whatever you want
 outDataRate = 1000      # points per second
 
 # read in the raw .wav file
