@@ -5,4 +5,4 @@ This repository has materials that relate to the paper, (reference goes here).
 
 The preprint of this paper (*Infinite Serice Bounce.pdf*) is on the top level.
 
-Be sure to check out the wiki: https://github.com/eepsmedia/ping-pong-bounce/wiki
+For advice, extension, data, downloads, etc., check out the wiki: https://github.com/eepsmedia/ping-pong-bounce/wiki
