@@ -1,3 +1,20 @@
+"""Take data in `.wav` format and convert to `.csv` at 1000 Hz
+
+A CD-quality `.wav` file is at 44100 Hz. 
+This produces too much data for school use for even a short sound clip.
+
+This script simulates using a Vernier sound sensor at 1000 Hz by first parsing the 
+`.wav` file and then averaging the sound values over a 0.001-second interval.
+In addition, we take the standard deviation of the data in the interval and interpret 
+that as a "volume" for the sound. 
+
+The result is a file with time (in milliseconds) and then the mean and standard deviation 
+of the sound values for each time slice. They are named `time`, `wave`, and `vol` in the output file.
+
+Be sure to change the file names in this script to have the correct `inFileName`
+and `outFileName` for your setup!
+"""
+
 import wave
 import numpy
 import math
