@@ -1,8 +1,16 @@
+"""Convert a .wav file to .csv
+
+Uses the `wave` package to convert a .wav file to a .csv. 
+Assumes that the file is monoaural (one channel).
+
+Be sure to edit the code to point to correct values of `inFileName` and `outFileName`
+"""
+
 import wave
 import numpy
 
-inFileName = "data/pingpong.wav"
-outFileName = 'data/pingpong raw redux.csv'
+inFileName = "../data/pingpong.wav"
+outFileName = '../data/pingpong raw redux.csv'
 
 f = wave.open(inFileName, 'rb')
 params = f.getparams()
